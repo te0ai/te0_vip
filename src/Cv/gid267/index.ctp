@@ -1,3 +1,7 @@
+<?php if (isset($downloadurl)): ?>
+  <a href="<?php h($downloadurl) ?>" class="btn btn-lg app-btn-primary mb-5 mt-2" style="font-size: 1.5rem;padding: 1rem 2rem;border-radius: 0.5rem;" download>コンバートされたCSVをダウンロードする</a>
+<?php endif; ?>
+
 <h1 class="app-page-title">CSVコンバーター</h1>
 <div class="app-card alert alert-dismissible shadow-sm mb-4 border-left-decoration" role="alert">
   <div class="inner">

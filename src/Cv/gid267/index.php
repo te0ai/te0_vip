@@ -61,17 +61,28 @@ class indexC extends commonSubC{
 				if (($handle = fopen($fileTmpPath, 'r')) !== FALSE) {
 					$csvData = [];
 					$headers = [];
-					while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+
+					$lineNumber = 0; // 行番号を追跡
+					
+					while (($data = fgetcsv2($handle,",")) !== FALSE) {
+						$lineNumber++;
 						// 最初の行をヘッダーとして取得
 						if (empty($headers)) {
 							$headers = array_map(function ($item) {
-								return mb_convert_encoding(trim($item), 'UTF-8', 'SJIS-win');
+								return trim($item);
 							}, $data);
 							continue;
 						}
+						// ヘッダーとデータの要素数が一致するか確認
+						if (count($headers) !== count($data)) {
+							$headerCount = count($headers);
+							$dataCount = count($data);
+							Session::error("CSVファイルのフォーマットが正しくありません（".$lineNumber." 行目：ヘッダーのカラム数 ".$headerCount."、データのカラム数 ".$dataCount."）。");
+							return;
+						}
 						// データ行の文字コードをUTF-8に変換し、ヘッダーをキーに設定
 						$row = array_combine($headers, array_map(function ($item) {
-							return mb_convert_encoding(trim($item), 'UTF-8', 'SJIS-win');
+							return trim($item);
 						}, $data));
 						// 注文IDがない場合はエラー
 						if(!isset($row['注文ID'])){
@@ -227,7 +238,7 @@ class indexC extends commonSubC{
 
 				// ダウンロードリンクを表示
 				$downloadUrl = _TMP_HOME_ . $fld . '/' . $file;
-				r($downloadUrl);
+				self::set('downloadurl',$downloadUrl);
 				Session::info('CSVファイルのコンバートが完了しました。');
 			} else {
 				Session::error('ファイルのアップロードに失敗しました。');
