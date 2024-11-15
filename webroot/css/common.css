@@ -1,0 +1,313 @@
+.text-off{
+  color:#EEE;
+}
+.text-on{
+  color:#39C0ED;
+}
+/* add color st */
+.form-changed{
+  background-color:#e3f2fd !important;
+}
+/* add color en */
+
+/* vue.js st */
+[v-cloak] {
+  display: none;
+}
+/* vue.js en */
+
+.btn-outline-light{
+  color: #000 !important;
+}
+/* file */
+.form-file-area{
+  width: 100%;
+  height: 100%;
+  /*
+  background-color: #EEE;
+  background-image:repeating-linear-gradient(-45deg,#fff, #fff 7px,transparent 0, transparent 14px);
+  */
+}
+.form-file-area input[type="file"]{
+  display: none;
+}
+/* file */
+
+/* フォーム編不可加かつ送信可能 st */
+.form-disabled{
+  background-color: #EEE;
+  color: #AAA;
+  cursor: not-allowed;
+}
+/* フォーム編不可加かつ送信可能 en */
+
+/* debug */
+xmp,
+#foot_debug{
+  position: relative;
+  z-index:9999;
+  background-color: #FFF;
+}
+.foremost{
+  position: relative;
+  z-index:9999;
+}
+.bw10{
+  border-width: 10px !important;
+  box-sizing: border-box !important;
+}
+
+.wi-header{
+  background:linear-gradient(#40ABE8, #324EA9);
+}
+.logo-transparent img{
+  width: 135px;
+}
+
+/* step bar st */
+.progressbar {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.progressbar li {
+    position: relative;
+    list-style-type: none;
+    text-align: center;
+    text-transform: uppercase;
+    width: 25%;
+    color: #999999;
+    font-weight: bold;
+    counter-increment: steps;
+}
+.progressbar li:before {
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: 7px auto 20px auto;
+    content: '';
+    line-height: 26px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #F5F5F5;
+    content: counter(steps);
+}
+.progressbar li:after {
+    position: absolute;
+    z-index: 0;
+    top: 15px;
+    left: -50%;
+    width: 100%;
+    height: 2px;
+    content: '';
+    background-color: #F5F5F5;
+}
+.progressbar li:first-child:after {
+    content: none;
+}
+.progressbar li.active,
+.progressbar li.complete{
+    color: #0070BD;
+}
+.progressbar li.active:before,
+.progressbar li.complete:before {
+    background-color: #0070BD;
+    color: #FFF;
+    position: relative;
+    z-index: 1;
+}
+.progressbar li.active:after,
+.progressbar li.complete:after {
+    background-color: #0070BD;
+}
+/* step bar en */
+
+/* side nav st */
+#side-nav{
+  left: 0;
+  transform: translateX(0);
+  position: fixed;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #2c2f34;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1040;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+  padding: 0;
+  width: 15rem;
+  list-style-type: none;
+}
+#side-nav .collapsible {
+  margin: 1rem 0 0;
+  padding: 0;
+}
+#side-nav ul{
+  list-style: none;
+  padding-left: 0;
+  max-height: 100vh;
+}
+#side-nav .collapsible > li {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+#side-nav ul li {
+  padding: 0;
+}
+
+#side-nav a {
+  display: block;
+  height: 56px;
+  line-height: 56px;
+  padding-left: 20px;
+  color: #fff;
+}
+#side-nav .collapsible a:hover {
+  background-color: #fff;
+  color: #2c2f34;
+}
+#side-nav .collapsible .fab,
+#side-nav .collapsible .far,
+#side-nav .collapsible .fas {
+  font-size: .8rem;
+  margin-right: 13px;
+}
+/* side nav en */
+
+/* 分かりやすいトグル st */
+.switch2 input {
+	display: none;
+}
+.switch2 label{
+	display: block;
+	float: left;
+	cursor: pointer;
+	margin: 0;
+	padding: 10px;
+	background: #bdc3c7;
+	color: #869198;
+	font-size: 16px;
+	text-align: center;
+	line-height: 1;
+	transition: .2s;
+}
+.switch2 label:first-of-type{
+	border-radius: 3px 0 0 3px;
+}
+.switch2 label:last-of-type{
+	border-radius: 0 3px 3px 0;
+}
+.switch2 input[type="radio"]:checked + .switch-on {
+	background-color: #4285F4;
+	color: #fff;
+}
+.switch2 input[type="radio"]:checked + .switch-off {
+	background-color: #e67168;
+	color: #fff;
+}
+/* 分かりやすいトグル en */
+
+/* PUBNUB st */
+#pnub_table {
+  width: 100%;
+  border-top: #AAA 1px solid;
+  border-bottom: #AAA 1px solid;
+}
+
+#pnub_table tr,
+#pnub_table th {
+  border-bottom: #AAA 1px solid;
+  border-top: #AAA 1px solid;
+
+}
+
+/* フローティングタブのスタイル */
+.pnub_floating-tab {
+  position: fixed;
+  bottom: -40px;
+  right: 20px;
+  width: 450px;
+  background-color: #EEE;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transform: translateY(80%);
+}
+
+/* タブヘッド */
+.pnub_tab-head {
+  padding: 5px;
+  color: #000;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* タブ内容 */
+.pnub_tab-content {
+  padding: 15px;
+  color: #000;
+  background-color: #FFF;
+  position: relative;
+  border: 1px solid #DDD;
+  height: 300px;
+  overflow-y: auto;
+}
+
+/* 閉じるボタン */
+.pnub_close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+/* 表示時 */
+.pnub_floating-tab.pnub_show {
+  transform: translateY(0);
+}
+
+@keyframes pnub_blink {
+  0% {
+    background-color: red;
+  }
+
+  50% {
+    background-color: transparent;
+  }
+
+  100% {
+    background-color: red;
+  }
+}
+
+.pnub_status-denger {
+  display: inline-block;
+  width: 10px;
+  /* サイズを適宜調整 */
+  height: 10px;
+  /* サイズを適宜調整 */
+  border-radius: 50%;
+  animation: pnub_blink 1s infinite;
+  margin-right: 10px;
+}
+
+.pnub_status-success {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 10px;
+}
+/* PUBNUB en */

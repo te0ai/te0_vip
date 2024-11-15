@@ -1,0 +1,186 @@
+/* 超高速ライトボックス st */
+#wibox {
+    position: absolute;
+    z-index: 9999;
+    -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.25);
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.25);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(color=#000000,direction=135,strength=3,enabled=true)";
+    filter: progid: DXImageTransform.Microsoft.Shadow(color=#000000, direction=135, strength=3, enabled=true);
+    /* IE5.5+ */
+    background: #fff;
+    /* IE Hack */
+    border: 2px solid #CCC;
+}
+#wibox iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+#wilayer {
+    background-color: #FFF;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 9998;
+    opacity: .5;
+    /* FireFox, Webkit, Opera */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
+    filter: progid: DXImageTransform.Microsoft.Alpha(opacity=50);
+    /* IE5.5+ */
+}
+#wiclose {
+    width: 45px;
+    height: 45px;
+    background-image: url(/img/wiredsyn/closebt.png);
+    display: block;
+    top: -23px;
+    right: -23px;
+    position: absolute;
+}
+.wibox{
+cursor:pointer;
+}
+
+/* 超高速ライトボックス en */
+
+/* ドラッガブル st */
+.draggable{
+  filter:alpha(opacity=90); /*IE*/
+	-moz-opacity:0.90; /*FF*/
+	opacity:0.90;
+  box-shadow:0px 0px 10px;
+}
+.draggable-handle{
+  cursor: move;
+}
+/* ドラッガブル en */
+
+.hide{
+  display: none;
+}
+/* TRリンク st */
+tbody tr[data-href] {
+  cursor:pointer;
+}
+tbody tr[data-url] {
+  cursor:pointer;
+}
+/* TRリンク en */
+
+.form-search-success{
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+
+.form-searches-success{
+  margin-bottom: 0px;
+}
+
+.form-search-toggle{
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.form-search-history{
+  position:absolute;
+  z-index:9999;
+}
+
+
+
+/* フォームイメージ st */
+.form-file-img{
+  width: 5vw;
+}
+.form-file-head{
+  font-size: 1vw;
+}
+/* フォームイメージ en */
+
+/* ファイルアップロード st */
+.form-file-bnr-href{
+  vertical-align: middle;
+  font-size: 2vw;
+  min-width: 50px;
+}
+
+/* ファイルアップロード en */
+
+/* フォームエラー st */
+.error_input{
+	display:block;
+	color:#F00;
+}
+/* フォームエラー en */
+
+/* パスワード st */
+.form-password{
+	background-image: url(/img/wiredsyn/password.png);
+	background-repeat: repeat-x;
+	background-position: left center;
+}
+.form-password:hover,
+.form-password:focus {
+	background: rgba(255,255,255,0.5);
+}
+/* パスワード en */
+
+
+
+/* フォーム編不可加かつ送信可能 st */
+.event-none{
+  pointer-events: none;
+}
+.event-none input,
+.event-none textarea,
+.event-none select,
+.event-none label,
+.event-none .form-search-success{
+  background-color: #EEE;
+}
+/* フォーム編不可加かつ送信可能 en */
+
+
+/* vue.js st */
+[v-cloak] {
+  display: none;
+}
+/* vue.js en */
+
+/* 機能追加 st */
+.cl{
+  clear: both;
+}
+/* 機能追加 en */
+
+.vcenter{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit- transform: translateY(-50%) translateX(-50%);
+}
+
+/* 表示制御 st */
+#control_stop{
+	background-color:#FFF;
+	position: fixed;
+	z-index: 99998;
+	height: 100%;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	opacity: .75; /* Standard: FF gt 1.5, Opera, Safari */
+	filter: alpha(opacity=75); /* IE lt 8 */
+	-ms-filter: "alpha(opacity=75)"; /* IE 8 */
+	-khtml-opacity: .75; /* Safari 1.x */
+	-moz-opacity: .75; /* FF lt 1.5, Netscape */
+}
+/* 表示制御 en */
+
+/* 必須項目明示 st */
+.form-required{
+  background-color: #ffe2f3;
+}
+/* 必須項目明示 en */
