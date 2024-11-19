@@ -136,6 +136,7 @@ class indexC extends commonC{
 						$_SESSION['auth'] = array(
 							'uid' => $dtb_login['data'][0]['id'],
 							'gid' => $dtb_login['data'][0]['gid'],
+							'type' => $dtb_org['data'][0]['type'],
 							'user' => $dtb_login['data'][0],
 							'org' => $dtb_org['data'][0]
 						);
@@ -154,10 +155,12 @@ class indexC extends commonC{
 		}
 
 		//ログインしている場合はリダイレクト
-		if (
-			isset($_SESSION['auth']['gid'])&&
-			is_numeric($_SESSION['auth']['gid'])
-		) {
+		if(
+			isset($_SESSION['auth']['type'])&&
+			($_SESSION['auth']['type']==='admin'||$_SESSION['auth']['type']==='agent')
+		){
+			self::$redirect = array('url' => $_SESSION['auth']['type'].'/', 'sec' => 0);
+		}else if (isset($_SESSION['auth']['gid'])&&is_numeric($_SESSION['auth']['gid'])) {
 			self::$redirect = array('url' => 'gid'.$_SESSION['auth']['gid'].'/', 'sec' => 0);
 		}
 	}
