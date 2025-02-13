@@ -201,8 +201,8 @@ class indexC extends commonSubC{
 					$csv .= '"' . str_replace(' ', '　', $orderDatas[0]['発送先氏名']) . '",'; //氏名漢字
 					$csv .= '"' . str_replace(' ', '　', $orderDatas[0]['発送先氏名(カナ)']) . '",'; //氏名カナ
 					$csv .= '"' . str_replace('-', '', $orderDatas[0]['発送先郵便番号']) . '",'; //郵便番号
-					$csv .= '"' . $orderDatas[0]['発送先住所１'] . '",'; //住所1
-					$csv .= '"' . $orderDatas[0]['発送先住所２'] . '",'; //住所2
+					$csv .= '"' . mb_convert_kana(str_replace([" ", "　"], "", $orderDatas[0]['発送先住所１']), "ASKV") . '",'; //住所1
+					$csv .= '"' . mb_convert_kana(str_replace([" ", "　"], "", $orderDatas[0]['発送先住所２']), "ASKV") . '",'; //住所2
 					$csv .= '"",'; //住所3
 					$csv .= '"",'; //生年月日
 					$csv .= '"2",'; //性別
@@ -225,8 +225,8 @@ class indexC extends commonSubC{
 					} else {
 						$csv .= '"",';//メモ
 					}
-					//最後のカンマを改行に変換
-					$csv = preg_replace('/,$/', "\n", $csv);
+					//最後のカンマを改行に変換（CRLF）
+					$csv = preg_replace('/,$/', "\r\n", $csv);
 				}
 
 				//CSV出力

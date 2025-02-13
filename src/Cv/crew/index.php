@@ -32,11 +32,12 @@ class indexC extends commonSubC{
 			$gid = isset($_POST['gid']) ? $_POST['gid'] : '';
 			if(is_numeric($gid)){
 				$_SESSION['auth']['gid'] = $gid;
+				$_SESSION['auth']['type'] = 'marchant';
 			}
 
 			//転送
 			if (
-				(string)$_SESSION['auth']['gid'] !== (string)_CREW_GID_
+				$_SESSION['auth']['type'] !== 'crew'
 			) {
 				self::$redirect = array('url' => _HOME_.'gid'.$gid, 'sec' => 0);
 				return false;

@@ -12,18 +12,14 @@ class commonSubC extends commonC{
 
 		//タイプが「merchant」でなければ転送
 		if (
-			!isset($_SESSION['auth']['gid']) ||
-			$_SESSION['auth']['gid'] !== $gid
+			!isset($_SESSION['auth']['type']) ||
+			$_SESSION['auth']['type'] !== 'crew'
 		) {
 			self::$redirect = array('url' => _HOME_, 'sec' => 0);
 			return false;
 		}
 
 		$menu = array();
-		$menu[] = array(
-			'name' => 'ログイン',
-			'url' => 'gid'.$gid.'/'
-		);
 		self::set('menu', $menu);
 
 		//親の継承（意図しないかぎり消してはいけない）
