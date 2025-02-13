@@ -120,7 +120,7 @@
           <nav class="app-nav app-nav-footer">
             <ul class="app-menu footer-menu list-unstyled">
               <li class="nav-item">
-                <a class="nav-link" href="<?php h(_HOME_); ?>terms/">
+                <a class="nav-link" href="https://te0.jp/use-policy/special-features">
                   <span class="nav-icon">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-file-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z" />
